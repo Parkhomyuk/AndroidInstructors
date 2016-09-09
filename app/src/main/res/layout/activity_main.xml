@@ -1,0 +1,142 @@
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:panelHeight="68dp"
+    sothree:shadowHeight="4dp"
+    sothree:overlay="true"
+    sothree:fadeColor="@android:color/black"
+    sothree:paralaxOffset="@dimen/activity_vertical_margin"
+    sothree:dragView="@drawable/less_white"
+
+        >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/american1"
+        />
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="85dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo4"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="77dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in"
+        android:id="@+id/signin"
+       android:layout_centerHorizontal="true"
+        android:background="#56010101"
+        android:textSize="24sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:padding="20dp"
+        android:textColor="#fcf2f2" />
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center|top"
+        android:background="#2a010101"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/less_white"
+
+            android:id="@+id/wh"
+
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Define your location"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/wh"
+            android:id="@+id/textMap"
+            />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Map"
+                    android:id="@+id/btnMap"
+                    android:layout_weight="1"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Satellite"
+                    android:id="@+id/btnSatellite"
+                    android:layout_weight="1"
+                    />
+                <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hybrid"
+                android:id="@+id/btnHybrid"
+                android:layout_weight="1"
+                />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seattle"
+                    android:id="@+id/btnSeattle"
+                    android:layout_weight="1"
+                    />
+
+
+            </LinearLayout>
+        <fragment xmlns:map="http://schemas.android.com/apk/res-autos"
+            android:id="@+id/mapView"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textMap"
+            map:cameraTargetLat="40.7484"
+            map:cameraTargetLng="-73.9857"
+            map:cameraBearing="112.5"
+            map:cameraTilt="65"
+            map:cameraZoom="17"
+            />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
